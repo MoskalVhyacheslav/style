@@ -1,4 +1,4 @@
-import { matchStyleProfile } from '../../../shared/style-definitions.js';
+import { matchStyleProfile } from 'style-definitions.js';
 
 /**
  * Generate style profile from quiz answers
