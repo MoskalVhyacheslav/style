@@ -10,7 +10,7 @@ import resultsRoutes from './routes/results.js';
 await connectDB();
 
 const app = express();
-app.use(cors({ origin: process.env.FRONTEND_URL || 'http://localhost:3000' }));
+app.use(cors({ origin: process.env.FRONTEND_URL || 'http://style-production-6f37.up.railway.app/' }));
 app.use(express.json());
 
 app.use('/api/auth', authRoutes);
