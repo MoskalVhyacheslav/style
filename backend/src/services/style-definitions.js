@@ -89,7 +89,7 @@ export const STYLE_PROFILES = {
   creative_eclectic: {
     id: 'creative_eclectic',
     name: 'Creative Eclectic',
-    description: 'Mix of patterns, bold colors, unexpected combinations. You're not afraid to experiment—vintage finds meet contemporary pieces. Your style is distinctly yours.',
+    description: 'Mix of patterns, bold colors, unexpected combinations. Youre not afraid to experiment—vintage finds meet contemporary pieces. Your style is distinctly yours.',
     keywords: ['eclectic menswear', 'creative style men', 'pattern mixing outfit'],
     triggers: {
       preferredStyles: ['creative', 'bohemian', 'street'],
