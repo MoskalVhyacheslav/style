@@ -17,14 +17,23 @@ export default function SharePage() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
 
-  useEffect(() => {
-    if (!token) return;
-    results
-      .getByShareToken(token)
-      .then(setData)
-      .catch((e) => setError(e.message))
-      .finally(() => setLoading(false));
-  }, [token]);
+ useEffect(() => {
+  let cancelled = false;
+
+  (async () => {
+    try {
+      setLoading(true);
+      const value = (await results.getByShareToken(token)) as SharedResult;
+      if (!cancelled) setData(value);
+    } catch (e: any) {
+      if (!cancelled) setError(e?.message ?? 'Unknown error');
+    } finally {
+      if (!cancelled) setLoading(false);
+    }
+  })();
+
+  return () => { cancelled = true; };
+}, [token]);
 
   if (loading) {
     return (
