@@ -23,7 +23,7 @@ export default function SharePage() {
   (async () => {
     try {
       setLoading(true);
-      const value = (await results.getByShareToken(token)) as SharedResult;
+      const value = (await results.getByShareToken(token));
       if (!cancelled) setData(value);
     } catch (e: any) {
       if (!cancelled) setError(e?.message ?? 'Unknown error');
